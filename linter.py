@@ -21,7 +21,7 @@ class Erlc(Linter):
     )
 
     executable = "erlc"
-    tempfile_suffix = "erl"
+    tempfile_suffix = "-"
 
     # ERROR FORMAT # <file>:<line>: [Warning:|] <message> #
     regex = (
