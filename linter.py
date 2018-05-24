@@ -42,7 +42,7 @@ class Erlc(Linter):
 
         this func is overridden so we can handle included directories.
         """
-        command = [self.executable_path, '-W']
+        command = ['erlc', '-W']
 
         settings = self.get_view_settings()
         dirs = settings.get('include_dirs', [])
@@ -60,5 +60,7 @@ class Erlc(Linter):
             command.extend(["-pz", d])
 
         command.extend(["-o", output_dir])
+
+        command.extend(["$file_on_disk"])
 
         return command
