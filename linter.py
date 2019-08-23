@@ -15,11 +15,6 @@ from SublimeLinter.lint import Linter, util
 class Erlc(Linter):
     """Provides an interface to erlc."""
 
-    syntax = (
-        "erlang",
-        "erlang improved"
-    )
-
     executable = "erlc"
     tempfile_suffix = "-"
 
@@ -33,7 +28,8 @@ class Erlc(Linter):
     error_stream = util.STREAM_STDOUT
 
     defaults = {
-        "include_dirs": []
+        "include_dirs": [],
+        "selector": "source.erlang"
     }
 
     def cmd(self):
