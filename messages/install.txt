@@ -1,10 +1,7 @@
-SublimeLinter-contrib-erlc
+SublimeLinter-erlc
 -------------------------------
 This linter plugin for SublimeLinter provides an interface to erlc.
 
-** IMPORTANT! **
-
-Before this plugin will activate, you *must*
-follow the installation instructions here:
+Please follow the installation instructions here:
 
 https://github.com/SublimeLinter/SublimeLinter-erlc
