@@ -29,7 +29,10 @@ class Erlc(Linter):
 
     defaults = {
         "selector": "source.erlang",
-        "include_dirs": []
+        "-I": [],
+        "-pa": [],
+        "-pz": [],
+        "-o": ".",
     }
 
     def cmd(self):
@@ -38,13 +41,26 @@ class Erlc(Linter):
 
         this func is overridden so we can handle included directories.
         """
-        command = ['erlc', '-W']
+        command = ['erlc', '-W', '${args}']
 
         settings = self.settings
         dirs = settings.get('include_dirs', [])
         pa_dirs = settings.get('pa_dirs', [])
         pz_dirs = settings.get('pz_dirs', [])
         output_dir = settings.get('output_dir', ".")
+
+        if dirs:
+            self.logger.warn(
+                "Setting 'include_dirs' has been renamed to just 'I'.")
+        if pa_dirs:
+            self.logger.warn(
+                "Setting 'pa_dirs' has been renamed to just 'pa'.")
+        if pz_dirs:
+            self.logger.warn(
+                "Setting 'pz_dirs' has been renamed to just 'pz'.")
+        if "output_dir" in settings and output_dir != ".":
+            self.logger.warn(
+                "Setting 'output_dir' has been renamed to just 'o'.")
 
         for d in dirs:
             command.extend(["-I", d])
@@ -57,6 +73,6 @@ class Erlc(Linter):
 
         command.extend(["-o", output_dir])
 
-        command.extend(["$file_on_disk"])
+        command.extend(["${file_on_disk}"])
 
         return command
