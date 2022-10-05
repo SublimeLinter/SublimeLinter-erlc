@@ -21,14 +21,20 @@ The docs cover [troubleshooting PATH configuration](http://sublimelinter.com/en/
 
 ## Settings
 
-- SublimeLinter settings: http://sublimelinter.com/en/latest/settings.html
-- Linter settings: http://sublimelinter.com/en/latest/linter_settings.html
-
 Additional settings for erlc:
 
 |Setting|Description|
 |:------|:----------|
-|include_dirs|A list of directories to be added to the header search paths (-I is not needed).
-|pa_dirs|A list of directories to be added to the beginning of the code path.
-|pz_dirs|A list of directories to be added to the end of the code path.
-|output_dir|The directory where the compiler should place the output file.
+|I      |A list of directories to be added to the header search paths.
+|pa     |A list of directories to be added to the beginning of the code path.
+|pz     |A list of directories to be added to the end of the code path.
+|o      |The directory where the compiler should place the output file. (Defaults to the working dir.)
+
+You can add arbitrary command line arguments using the setting `args`.
+
+Note:  On previous version sof this plugin the above settings were named `include_dirs`, `pa_dirs`, `pz_dirs`, and `output_dir`.  We now use the default name from the command line.
+
+General documentation about the settings system can be found here:
+
+- SublimeLinter settings: http://sublimelinter.com/en/latest/settings.html
+- Linter settings: http://sublimelinter.com/en/latest/linter_settings.html

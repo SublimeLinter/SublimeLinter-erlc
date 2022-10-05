@@ -1,5 +1,6 @@
 SublimeLinter-erlc
--------------------------------
+------------------
+
 This linter plugin for SublimeLinter provides an interface to erlc.
 
 Please follow the installation instructions here:

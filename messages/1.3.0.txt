@@ -1,0 +1,15 @@
+SublimeLinter-erlc 1.3.0
+------------------------
+
+IMPORTANT NOTE!  All the recognized settings have been renamed to match
+the name on the command line.
+
+T.i.
+
+    `include_dirs` -> `I`
+    `pa_dirs` -> `pa`
+    `pz_dirs` -> `pz`
+    `output_dir` -> `o`
+
+You can also just use the setting `args` for all the things or any other
+flag you might wanna set.
