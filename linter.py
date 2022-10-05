@@ -18,8 +18,9 @@ class Erlc(Linter):
     tempfile_suffix = "-"
 
     # ERROR FORMAT # <file>:<line>: [Warning:|] <message> #
+    # ERROR FORMAT # <file>:<line>:<col>: [Warning:|] <message> #
     regex = (
-        r".+:(?P<line>\d+):"
+        r"^.+?:(?P<line>\d+):(?:(?P<col>\d+):)?"
         r"(?:(?P<warning>\sWarning:\s)|(?P<error>\s))"
         r"+(?P<message>.+)"
     )
