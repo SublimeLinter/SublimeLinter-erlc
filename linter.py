@@ -21,8 +21,8 @@ class Erlc(Linter):
     # ERROR FORMAT # <file>:<line>:<col>: [Warning:|] <message> #
     regex = (
         r"^.+?:(?P<line>\d+):(?:(?P<col>\d+):)?"
-        r"(?:(?P<warning>\sWarning:\s)|(?P<error>\s))"
-        r"+(?P<message>.+)"
+        r"(?:(?P<warning>\sWarning:\s)|(?P<error>\s))+"
+        r"(?P<message>.+)"
     )
 
     error_stream = util.STREAM_STDOUT
