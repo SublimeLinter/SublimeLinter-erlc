@@ -25,7 +25,7 @@ class Erlc(Linter):
         r"(?P<message>.+)"
     )
 
-    error_stream = util.STREAM_STDOUT
+    error_stream = util.STREAM_STDERR
 
     defaults = {
         "selector": "source.erlang",
